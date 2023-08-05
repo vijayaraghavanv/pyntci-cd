@@ -7,7 +7,7 @@ on:
         default: "API Security tests"
 
 env:
-  PYNT_CREDENTIALS: ${{ secrets.YOURPYNTID }}
+  PYNT_CREDENTIALS: ${{secrets.YOURPYNTID}}
 
 jobs:
  api-security:
@@ -17,7 +17,7 @@ jobs:
     - name: install pynt cli
       run: | 
         python3 -m pip install --upgrade pyntcli 
-        echo ${{ secrets.YOURPYNTID }}
+        echo ${{secrets.YOURPYNTID}}
     - name: get goat collection 
       run: | 
         curl https://raw.githubusercontent.com/pynt-io/pynt/main/goat_functional_tests/goat.postman_collection.json -o goat.json 
