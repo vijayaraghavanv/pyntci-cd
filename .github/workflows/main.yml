@@ -1,0 +1,24 @@
+name: Example pynt yml
+'on':
+  workflow_dispatch:
+    inputs:
+      comment:
+        type: string
+        default: API Security tests
+env:
+  PYNT_CREDENTIALS: '${{ secrets.YOURPYNTID }}'
+jobs:
+  api-security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install pynt cli
+        run: |
+          python3 -m pip install --upgrade pyntcli 
+      - name: get goat collection
+        run: >
+          curl
+          https://github.com/vijayaraghavanv/pyntci-cd/blob/main/RSA_Maps.postman_collection.json
+          -o RSA_Maps.json 
+      - name: run pynt with newman integration
+        run: |
+          pynt newman --collection RSA_Maps.postman_collection.json --reporters
