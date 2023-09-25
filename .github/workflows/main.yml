@@ -14,9 +14,9 @@ jobs:
       - name: install pynt cli
         run: |
           python3 -m pip install --upgrade pyntcli 
-      - name: get Goat collection
+      - name: get RSA Map collection
         run: >
-          curl https://raw.githubusercontent.com/pynt-io/pynt/main/goat_functional_tests/goat.postman_collection.json -o goat.json 
+          curl https://raw.githubusercontent.com/pynt/main/RSA_Maps.postman_collection.json -o RSA_Maps.postman_collection.json 
       - name: run pynt with newman integration
         run: |
-          pynt newman --collection goat.json --reporters
+          pynt newman --collection RSA_Maps.postman_collection.json --reporters
