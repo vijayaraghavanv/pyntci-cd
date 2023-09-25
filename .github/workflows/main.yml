@@ -14,9 +14,9 @@ jobs:
       - name: install pynt cli
         run: |
           python3 -m pip install --upgrade pyntcli 
-      - name: get RSA Map collection
+      - name: get vj collection
         run: >
-          curl https://raw.githubusercontent.com/pynt/main/RSA_Maps.postman_collection.json -o RSA_Maps.postman_collection.json 
+          curl https://raw.githubusercontent.com/pynt/main/vjcollection.json -o vjcollection.json 
       - name: run pynt with newman integration
         run: |
-          pynt newman --collection RSA_Maps.postman_collection.json --reporters
+          pynt newman --collection vjcollection.json --reporters
