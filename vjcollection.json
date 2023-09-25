@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "list of users",
+			"name": "userslist",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -27,6 +27,27 @@
 							"key": "page",
 							"value": "2"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "singleuser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users/4",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"4"
 					]
 				}
 			},
