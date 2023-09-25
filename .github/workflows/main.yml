@@ -1,12 +1,12 @@
 name: Example pynt yml
-'on':
+on:
   workflow_dispatch:
     inputs:
       comment:
         type: string
-        default: API Security tests
+        default: "Pynt API Security tests"
 env:
-  PYNT_CREDENTIALS: '${{ secrets.YOURPYNTID }}'
+  PYNT_CREDENTIALS: ${{ secrets.YOURPYNTID }}
 jobs:
   api-security:
     runs-on: ubuntu-latest
@@ -16,7 +16,7 @@ jobs:
           python3 -m pip install --upgrade pyntcli 
       - name: get vj collection
         run: >
-          curl https://raw.githubusercontent.com/pynt/main/vjcollection.json -o vjcollection.json 
+          curl https://raw.githubusercontent.com/vijayaraghavanv/pynt/main/vjcollection.json -o vjcollection.json 
       - name: run pynt with newman integration
         run: |
           pynt newman --collection vjcollection.json --reporters
